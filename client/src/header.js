@@ -1,9 +1,21 @@
 import './style.css' ;
+import {useState} from  'react';
 import Logo from './logo.jpeg';
 import Avatar from './avatar.png';
 import {SearchIcon ,BellIcon , PlusIcon, QrcodeIcon, OfficeBuildingIcon} from '@heroicons/react/outline' ;
+import Button from "./Button";
 function Header(){
-    return(
+ const [userDropdownVisibilityClass,setUserDropdownVisibilityCLass] = useState( 'hidden');
+  function useUserDropdown(ref)
+ 
+ function toggleUserDropdown() {
+  if (userDropdownVisibilityClass === 'hidden') {
+    setUserDropdownVisibilityClass('block');
+  } else {
+    setUserDropdownVisibilityClass('hidden');
+  }
+}
+ return(
     <header className="flex w-full bg-reddit_dark p-2">
       <div className="mx-4 flex relative">
       <img src={Logo} alt="logo" className="w-10 h-10 mx-4 mr-10"></img>
@@ -15,7 +27,7 @@ function Header(){
       <button className="px-2 py-1">
       <BellIcon className="text-white w-6 h-6 mx-2 ml-10" />
       </button>
-      <button className="px-2 py-1">
+      /*<button className="px-2 py-1">
       <QrcodeIcon className="text-white w-6 h-6 mx-2" />
       </button>
       <button className="px-2 py-1">
@@ -24,12 +36,29 @@ function Header(){
       <button className="px-2 py-1">
       <PlusIcon className="text-white w-6 h-6 mx-2" />
       </button>
-      
-      <button className="bg-blue-600 rounded-md flex">
-        <img src={Avatar} alt="avatar" className="block w-10 h-10 mx-4"></img>
-       
-      </button>
+      */
 
+      <div className="mx-2 hidden sm:block ">
+      <Button outline className="mr-1"> Log In</Button>
+       <Button className=""> Sign Up </Button>
+       </div>
+       <ClickOutHandler onClickOut={() => setUserDropdownVisibilityClass('hidden')}>
+
+      <button className="bg-blue-600 rounded-md flex ml-4 border border-blue-800" onClick={() => toggleUserDropdown()}>
+      <UserIcon className="w-6 h-6 text-white m-1"/>
+    //  <div className="bg-blue-800 rounded-md w-8 h-8">
+      // <img src={Avatar} alt="avatar" className="block w-10 h-10 mx-4"></img>
+      //</div>
+      <ChevronDownIcon className="text-blue-500 w-5 h-5 mt-2 m-1" />
+      </button>
+      </ClickOutHandler>
+
+  <div className={"absolute right-0 top-8 bg-reddit_dark border border-blue-800 z-10 rounded-md text-reddit_text overflow-hidden" + userDropdownVisibilityClass}>  
+  <button href=""className="block flex w-50 py-2 px-3 hover:bg-blue-800 hover:text-black text-sm">
+    <LoginIcon className="w-5 h-5 mr-2"/>
+    Log In/Sign Up
+  </button>
+  </div>
     </header>
     );
     }

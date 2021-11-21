@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
       <Header/>
+      <AuthModal/>
       <BoardHeader/>
       <PostForm/>
       <div className="m-4 px-6 bg-rddit_dark text-reddit_text">
