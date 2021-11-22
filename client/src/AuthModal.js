@@ -80,7 +80,7 @@ function AuthModal() {
 
           {modalType === 'login' && (
             <div>
-              New to DocOverflow? <button className="text-blue-600" onClick={() => modalContext.setShow('register')}>SIGN UP</button>
+              New to Reddit? <button className="text-blue-600" onClick={() => modalContext.setShow('register')}>SIGN UP</button>
             </div>
           )}
           {modalType === 'register' && (
