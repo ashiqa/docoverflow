@@ -1,4 +1,4 @@
-import Logo from "./logo.png";
+import Logo from "./logo1.png";
 import {
   BellIcon,
   ChatIcon,
@@ -32,7 +32,8 @@ function Header() {
     <header className="w-full bg-reddit_dark p-2">
       <div className="mx-4 flex relative">
         <Link to="/">
-          <img src={Logo} alt="" className="w-8 h-8 mr-4"/>
+          <img src={Logo} alt="" className="w-8 h-8 mr-4" style={{filter:'invert(100%)'}}/>
+        
         </Link>
         <form action="" className="bg-reddit_dark-brighter px-3 flex rounded-md border border-reddit_border mx-4 flex-grow">
           <SearchIcon className="text-gray-300 h-6 w-6 mt-1" />
