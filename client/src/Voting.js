@@ -8,14 +8,18 @@ function Voting(props) {
   const {commentsTotals, userVotes} = rootCommentInfo;
   const {commentId} = props;
 
+  //if you are looking at a comment and it has some upvotes, assign the upvotes of that comment to total
   const total = commentsTotals && commentId in commentsTotals
     ? commentsTotals[commentId]
     : 0;
 
+  //
   const userVote = userVotes && commentId in userVotes
     ? userVotes[commentId]
     : 0;
 
+
+  // updation of new vote values in the database
   function sendVote(direction = 'up') {
     const directionNumber = direction === 'up' ? 1 : -1;
     if (directionNumber === userVote) {
@@ -28,6 +32,7 @@ function Voting(props) {
       })
   }
 
+
   function handleVoteUp() {
     sendVote('up');
   }
@@ -36,6 +41,7 @@ function Voting(props) {
     sendVote('down');
   }
 
+  
   function arrowButton(directionName = 'up') {
     const directionNumber = directionName === 'up' ? 1 : -1;
     let classNames = 'inline-block h-5 relative top-1 ';

@@ -5,8 +5,14 @@ import Button from "./Button";
 import axios from "axios";
 
 function CommentForm (props) {
+
+  //The user that is trying to comment has his info saved in userInfo using the context
   const userInfo = useContext(UserContext);
+
+  //The comment that is written is stored in commentBody using the State Hook
   const [commentBody,setCommentBody] = useState('');
+  
+  // This is used to post the comment of the user to the database via the backend
   function postComment(e) {
     e.preventDefault();
     const data = {body:commentBody, parentId:props.parentId,rootId:props.rootId,};
@@ -18,14 +24,18 @@ function CommentForm (props) {
         }
       });
   }
+
   return (
     <div className={'text-reddit_text'}>
+
+      {/* Shows you which account you are logged into */}
       {userInfo.username && props.showAuthor && (
         <div className="mb-2">
           Comment as {userInfo.username}
         </div>
       )}
 
+      {/* Input field to get the comment text from the user */}
       <form onSubmit={e => postComment(e)}>
         <Textarea className="w-full mb-3 border border-reddit_border"
                   onChange={e => setCommentBody(e.target.value)}
