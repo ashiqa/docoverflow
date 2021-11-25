@@ -4,17 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        reddit_orange: '#f54404',
-        reddit_red: '#f54404',
-        reddit_dark: {
+        docflow_orange: '#f54404',
+        docflow_blue: '#26c6da',
+        docflow_red: '#f54404',
+        docflow_dark: {
           DEFAULT: '#030303',
           brighter: '#1a1a1a',
           brightest: '#272728',
         },
-        reddit_border: {
+        docflow_border: {
           DEFAULT: '#343536',
         },
-        reddit_text: {
+        docflow_text: {
           DEFAULT: 'rgb(215, 218, 220)',
           darker: '#818384',
         },

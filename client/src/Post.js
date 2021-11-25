@@ -3,11 +3,11 @@ import PostContent from "./PostContent";
 
 function Post(props) {
 
-  let postClasses = "block border rounded-md " + (props.open ? "" : "hover:border-reddit_text cursor-pointer");
+  let postClasses = "block border rounded-md " + (props.open ? "" : "hover:border-docflow_text cursor-pointer");
   
   //formatting used if posts are being shown
   if (props.isListing) {
-    postClasses += " bg-reddit_dark-brighter p-3 mx-6 border-2 border-reddit_border";
+    postClasses += " bg-docflow_dark-brighter p-3 mx-6 border-2 border-docflow_border";
   } 
   
   else {
@@ -16,7 +16,7 @@ function Post(props) {
   }
 
   return (
-    <div className="text-reddit_text pb-4">
+    <div className="text-docflow_text pb-4">
       {/* Incase we have a specific post open, use PostContent component to display it */}
       {props.open && (
         <div className={postClasses}>

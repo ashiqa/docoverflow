@@ -8,7 +8,7 @@ function PostContent(props) {
 
         {/* The content of a post - author, title and content passed using props */}
       
-      <h5 className="text-reddit_text-darker text-sm mb-1"> Posted by u/{props.author} <TimeAgo datetime={props.postedAt} /></h5>
+      <h5 className="text-docflow_text-darker text-sm mb-1"> Posted by u/{props.author} <TimeAgo datetime={props.postedAt} /></h5>
       <h2 className="text-xl mb-3">{props.title}</h2>
       <div className="text-sm leading-6">
         <ReactMarkdown plugins={[gfm]} children={props.body} />

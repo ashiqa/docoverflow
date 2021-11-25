@@ -6,7 +6,7 @@ function BoardHeader() {
     
       <div className="h-32 bg-cover" style={{backgroundImage:'url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11459839.jpg")'}}>
       </div>
-      <div className="bg-reddit_dark-brighter">
+      <div className="bg-docflow_dark-brighter">
         <div className="mx-6 relative flex">
             {/* profile picture of  */}
 

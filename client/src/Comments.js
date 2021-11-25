@@ -19,7 +19,7 @@ function Comments(props) {
   const rootCommentInfo = useContext(RootCommentContext);
 
   return (
-    <div className={'my-2 text-reddit_text'}>
+    <div className={'my-2 text-docflow_text'}>
       {/* loop through all the data present in list comments*/}
       {comments.map(comment => {
 
@@ -28,12 +28,12 @@ function Comments(props) {
         return (
           <div className={'mb-2'}>
             <div className="flex mb-2">
-              <div className="bg-reddit_text w-10 h-10 rounded-full mr-2"/>
+              <div className="bg-docflow_text w-10 h-10 rounded-full mr-2"/>
               <div className="leading-10 pr-2 text-lg font-sans">{comment.author}</div>
               {/* What time the comment/reply was posted at */}
               <TimeAgo className="leading-10 text-md font-sans" datetime={comment.postedAt}/>
             </div>
-            <div className="border-l-2 border-reddit_text-darker p-3 pb-0"
+            <div className="border-l-2 border-docflow_text-darker p-3 pb-0"
                  style={{marginLeft:'18px'}}>
               <div className="pl-4 -mt-4">
                 <div>
@@ -43,7 +43,7 @@ function Comments(props) {
                 <Voting commentId={comment._id} />
                 <Button type={'button'}
                         onClick={() => setShowForm(comment._id)}
-                        className="bg-reddit_dark-brighter text-reddit_text-darker border-none py-2 pl-0 pr-0">Reply</Button>
+                        className="bg-docflow_dark-brighter text-docflow_text-darker border-none py-2 pl-0 pr-0">Reply</Button>
                 {comment._id === showForm && (
                   
                   // Use the comment form to provide option to write a new comment as the current user 

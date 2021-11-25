@@ -7,9 +7,9 @@ function PostForm() {
   return (
 
     // Module to create a new post 
-    <div className="bg-reddit_dark px-6 py-4 text-gray-400">
+    <div className="bg-docflow_dark px-6 py-4 text-gray-400">
 
-      <div className="border border-reddit_border p-2 rounded-md flex bg-reddit_dark-brighter">
+      <div className="border border-docflow_border p-2 rounded-md flex bg-docflow_dark-brighter">
         
         {/* Displays the profile picture of the current user */}
         <div className="rounded-full bg-gray-600 overflow-hidden w-10 h-10">
@@ -17,13 +17,13 @@ function PostForm() {
         </div>
         
         {/* When we try to create a new post, this makes sure the modal is visible and we are able to add the text */}
-        <form action="" className="flex-grow bg-reddit_dark-brightest border border-reddit_border ml-4 mr-2 rounded-md">
+        <form action="" className="flex-grow bg-docflow_dark-brightest border border-docflow_border ml-4 mr-2 rounded-md">
           <input type="text"
                  onFocus={e => {
                    e.preventDefault();
                    modalContext.setShow(true);
                  }}
-                 className="bg-reddit_dark-brightest p-2 px-3 text-sm block w-full rounded-md" placeholder="New post" />
+                 className="bg-docflow_dark-brightest p-2 px-3 text-sm block w-full rounded-md" placeholder="New post" />
         </form>
       </div>
 

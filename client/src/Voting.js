@@ -47,9 +47,9 @@ function Voting(props) {
     let classNames = 'inline-block h-5 relative top-1 ';
 
     if (directionNumber === userVote) {
-      classNames += ' text-reddit_red';
+      classNames += ' text-docflow_red';
     } else {
-      classNames += ' text-reddit_text-darker hover:text-white';
+      classNames += ' text-docflow_text-darker hover:text-white';
     }
 
     if (directionName === 'up') {

@@ -1,7 +1,8 @@
 import Logo from "./logo1.png";
 import {
+  BadgeCheckIcon,
   BellIcon,
-  ChatIcon,
+  ChartSquareBarIcon,
   ChevronDownIcon,
   LoginIcon,
   LogoutIcon,
@@ -26,28 +27,39 @@ function Header() {
       setUserDropdownVisibilityClass('hidden');
     }
   }
+  function handleClick(){
+    window.open("http://127.0.0.1:5000/", "_blank")
+    
+  }
+  function verify(){
+    window.open("https://forms.gle/argKrjHPCMmMeNme8", "_blank")
+  }
   const authModal = useContext(AuthModalContext);
   const user = useContext(UserContext);
   return (
-    <header className="w-full bg-reddit_dark p-2">
+    <header className="w-full bg-docflow_dark p-2">
       <div className="mx-4 flex relative">
 
         {/* Clicking on the logo redirects to the home page */}
         <Link to="/">
-          <img src={Logo} alt="" className="w-8 h-8 mr-4" style={{filter:'invert(100%)'}}/>
+          <img src={Logo} alt="" className="w-8 h-8 m-4" style={{filter:'invert(100%)'}}/>
         </Link>
 
         {/* Search field */}
-        <form action="" className="bg-reddit_dark-brighter px-3 flex rounded-md border border-reddit_border mx-4 flex-grow">
+        <form action="" className="bg-docflow_dark-brighter px-3 flex rounded-md border border-docflow_border m-3 flex-grow">
           <SearchIcon className="text-gray-300 h-6 w-6 mt-1" />
-          <input type="text" className="bg-reddit_dark-brighter text-sm p-1 pl-2 pr-0 block focus:outline-none text-white" placeholder="Search" />
+          <input type="text" className="bg-docflow_dark-brighter text-sm p-1 pl-2 pr-0 block focus:outline-none text-white" placeholder="Search" />
         </form>
 
         {/* In case a user is logged in, these 3 icons also can be seen on the NavBar */}
         {user.username && (
           <>
-            <button className="px-2 py-1">
-              <ChatIcon className="text-gray-400 w-6 h-6 mx-2" />
+            <button className="rounded-md bg-docflow_blue px-1 py-1" onClick={verify}>
+              <BadgeCheckIcon className="text-black w-6 h-6 mr-2 ml-8 " />
+              Doc verified?
+            </button>
+            <button className="px-2 py-1" onClick={handleClick}>
+              <ChartSquareBarIcon className="text-gray-400 w-6 h-6 mx-2" />
             </button>
             <button className="px-2 py-1">
               <BellIcon className="text-gray-400 w-6 h-6 mx-2" />
@@ -61,13 +73,13 @@ function Header() {
         {/* If user is not logged in, show the login and register buttons */}
         {!user.username && (
           <div className="mx-2 hidden sm:block">
-            <Button outline={1} className="mr-1 h-8" onClick={() => authModal.setShow('login')}>Log In</Button>
-            <Button className="h-8" onClick={() => authModal.setShow('register')}>Sign Up</Button>
+            <Button outline={1} className="m-1 mt-3 h-8" onClick={() => authModal.setShow('login')}>Log In</Button>
+            <Button className="h-8 mt-3" onClick={() => authModal.setShow('register')}>Sign Up</Button>
           </div>
         )}
 
         <ClickOutHandler onClickOut={() => setUserDropdownVisibilityClass('hidden')}>
-          <button className="rounded-md flex ml-4 border border-gray-700" onClick={() => toggleUserDropdown()}>
+          <button className="rounded-md flex m-4 border border-gray-700" onClick={() => toggleUserDropdown()}>
             {/* User Icons shown for user when logged out and logged in */}
             {!user.username && (
               <UserIcon className="w-6 h-6 text-gray-400 m-1" />
@@ -82,7 +94,7 @@ function Header() {
           </button>
 
           {/* Dropdown menu options depending on user logged in or logged out */}
-          <div className={"absolute right-0 top-8 bg-reddit_dark border border-gray-700 z-10 rounded-md text-reddit_text overflow-hidden "+userDropdownVisibilityClass}>
+          <div className={"absolute right-0 top-8 bg-docflow_dark border border-gray-700 z-10 rounded-md text-docflow_text overflow-hidden "+userDropdownVisibilityClass}>
             
             {/*If user logged in, welcome and give option to log out */}
             {user.username && (

@@ -51,7 +51,7 @@ function AuthModal() {
       if you click outside, modal will not be shown
       otherwise, the modal will be visible to you */}
       <ClickOutHandler onClickOut={() => modalContext.setShow(false)}>
-        <div className="border border-reddit_dark-brightest w-3/4 sm:w-1/2 lg:w-1/4 bg-reddit_dark p-5 text-reddit_text self-center mx-auto rounded-md">
+        <div className="border border-docflow_dark-brightest w-3/4 sm:w-1/2 lg:w-1/4 bg-docflow_dark p-5 text-docflow_text self-center mx-auto rounded-md">
           
           {/* All the code in flower brackets is in Javascript and becomes specific to the component named */}
           {/* The code in tags is common and applies to all the components */}
@@ -67,19 +67,19 @@ function AuthModal() {
           {/* Here we define what fields are specific to the register modal */}
           {modalType === 'register' && (
             <label>
-              <span className="text-reddit_text-darker text-sm">E-mail:</span>
+              <span className="text-docflow_text-darker text-sm">E-mail:</span>
               <Input type="email" className="mb-3 w-full" value={email} onChange={e => setEmail(e.target.value)} />
             </label>
           )}
 
           {/* Since this part is inside a label tag, all the fields here apply to all the defined modals */}
           <label>
-            <span className="text-reddit_text-darker text-sm">Username:</span>
+            <span className="text-docflow_text-darker text-sm">Username:</span>
             <Input type="text" className="mb-3 w-full" value={username} onChange={e => setUsername(e.target.value)} />
           </label>
 
           <label>
-            <span className="text-reddit_text-darker text-sm">Password:</span>
+            <span className="text-docflow_text-darker text-sm">Password:</span>
             <Input type="password" className="mb-3 w-full" value={password} onChange={e => setPassword(e.target.value)} />
           </label>
 

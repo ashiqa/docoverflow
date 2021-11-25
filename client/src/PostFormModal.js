@@ -48,7 +48,7 @@ function PostFormModal () {
       
       {/*Checks what element has been clicked and its properties */}
       <ClickOutHandler onClickOut={() => {}  }>
-        <div className="border border-reddit_dark-brightest w-3/4 md:w-2/4 bg-reddit_dark p-5 text-reddit_text self-center mx-auto rounded-md">
+        <div className="border border-docflow_dark-brightest w-3/4 md:w-2/4 bg-docflow_dark p-5 text-docflow_text self-center mx-auto rounded-md">
           <h1 className="text-2xl mb-5">Create a new query</h1>
           
           {/* Title of the query */}

@@ -19,7 +19,7 @@ function PostsListing() {
   //Feed with the list of posts module
 
   return (
-    <div className="bg-reddit_dark">
+    <div className="bg-docflow_dark">
       
       {/* A loop over the posts that need to be displayed */}
       {comments.map(comment => (

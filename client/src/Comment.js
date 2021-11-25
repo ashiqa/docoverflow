@@ -63,7 +63,7 @@ function Comment(props) {
       {/* In case we havent commented yet, this gives us an option to do so */}
       {!!comment && !!comment._id && (
         <>
-          <hr className="border-reddit_border my-4"/>
+          <hr className="border-docflow_border my-4"/>
 
           {/* CommentForm compoennt is used to post new comments on a post */}
           <CommentForm onSubmit={() => refreshComments()}

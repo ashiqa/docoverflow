@@ -26,7 +26,7 @@ function CommentForm (props) {
   }
 
   return (
-    <div className={'text-reddit_text'}>
+    <div className={'text-docflow_text'}>
 
       {/* Shows you which account you are logged into */}
       {userInfo.username && props.showAuthor && (
@@ -37,7 +37,7 @@ function CommentForm (props) {
 
       {/* Input field to get the comment text from the user */}
       <form onSubmit={e => postComment(e)}>
-        <Textarea className="w-full mb-3 border border-reddit_border"
+        <Textarea className="w-full mb-3 border border-docflow_border"
                   onChange={e => setCommentBody(e.target.value)}
                   value={commentBody}
                   placeholder={'Your comment. You can use markdown here'} />

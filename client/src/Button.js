@@ -5,7 +5,7 @@ function Button(props) {
   if (props.outline) {
     classNames += "text-gray-300 ";
   } else {
-    classNames += "bg-gray-300 text-reddit_dark ";
+    classNames += "bg-gray-300 text-docflow_dark ";
   }
   return (
     <button {...props} className={classNames + props.className} />
